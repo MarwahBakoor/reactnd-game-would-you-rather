@@ -19,6 +19,10 @@ class Home extends Component {
                             </ul>
                         <div className="poll-reviwe-dashboard">
                             <PollReview />
+                            <PollReview />
+                            <PollReview />
+                            <PollReview />
+                            <PollReview />
                         </div>
 
                     </div>

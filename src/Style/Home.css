@@ -10,19 +10,19 @@
 .cards-titles .title{
     margin: 0 2rem 0 2rem;
 } 
-.title {
+.cards-titles .title {
     margin: 0 2rem;
   }
   
   /* Underline styles */
-  .title a {
+ .cards-titles .title a {
     display: block;
     position: relative;
     padding: 0.2em 0;
   }
   
   /* Fade in */
-  .title a::after {
+  .cards-titles .title a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -34,18 +34,31 @@
     transition: opacity 300ms, transform 300ms;
   }
   
-  .title a:hover::after,
-  .title a:focus::after {
+  .cards-titles .title a:hover::after,
+ .cards-titles .title a:focus::after {
     opacity: 1;
     transform: translate3d(0, 0.2em, 0);
   }
 
-  .title .selected::after{
+  .cards-titles .title .selected::after{
     opacity: 1;
 
   }
 
   .poll-reviwe-dashboard{
-      margin: 5rem;
+      margin: 10rem 0;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-row-gap: 5rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .poll-reviwe-dashboard {
+      display: block;
+      
+    }
+    .poll-reviwe-dashboard > div{
+      margin: 10rem 0 0 0;
+    }
   }
 
