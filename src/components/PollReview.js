@@ -2,9 +2,18 @@ import React,{Component} from 'react'
 import '../Style/PollReview.css'
 import Avatar from '../images/Avatar1.png'
 class PollReview extends Component {
+    state = {
+        selectedOption:''
+    }
+    handleClick=(option) => {
+        this.setState(()=>({
+            chosenOption:option
+        }))
+    }
     render(){
+        const selectedOption = this.state.chosenOption
         return(
-            <div className='poll-review'>
+            <div className='box poll-review'>
                 <div className='profile-img' >
                      <img src={Avatar} alt="profileImg"  />
                 </div>
@@ -16,17 +25,19 @@ class PollReview extends Component {
                         Would You Rather?
                     </div>  
                     <ul className="Options">
-                        <li>
-                            Front-end Deveolpment
+                        <li className={selectedOption === 'op1' ? 'selected' : '' } onClick={()=> this.handleClick('op1') }>
+                             Front-end Deveolpment
                         </li>
-                        <li>
-                            Back-end Deveolpment
+                        <li className={selectedOption === 'op2' ? 'selected' : '' } onClick={()=> this.handleClick('op2') }>
+                            <span>
+                             Back-end Deveolpment
+                            </span>
                         </li>
 
                     </ul>
                 </div>
 
-                <a href="#" className="view-poll">View Poll</a>
+                <a href="#" className="btn">Submit</a>
                 
             </div>
         )

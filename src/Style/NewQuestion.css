@@ -1,0 +1,41 @@
+.create-question-countener{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    padding: 40px;
+    text-align: center;
+}
+
+.create-question-countener h2 {
+
+    color: #F05454;
+    margin-bottom: 20px;
+}
+
+.create-question-countener h3 {
+    color: #f99a9a;
+}
+
+.create-question-form input[type=text] {
+    display: block ;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-bottom: 1px solid #F05454;
+    background-color: #EFEFEF;
+    margin-bottom: 20px;
+    }
+
+      
+.create-question-form input:focus {
+    outline: none;
+    border-bottom: 2px solid #F05454;
+}
+
+
+#create-question-form-btn{
+    width: 15rem;
+    font-size: 1rem;
+}

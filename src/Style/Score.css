@@ -1,0 +1,39 @@
+
+
+.name {
+    position: relative;
+    bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+.score-details-container{
+    position: relative;
+    bottom: 2rem;
+    text-align: center;  
+    display:flex;
+    margin: 2rem 2rem;
+    justify-content: space-between;
+}
+
+.score-details-container div span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color:#F05454;
+}
+.score{
+    margin: auto;
+    position: relative;
+    bottom: 2rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    padding-top:0.3rem;
+    background-color:#F05454 ;
+}
+.score span {
+    
+    font-size: 1.5rem;
+    color: white;
+}
