@@ -17,7 +17,7 @@ class Nav extends Component {
             <div className = 'NavBar'>   
                 <div className={`sidebar ${slidebar ? 'open' : ''}`}>
                     <div className="logo-details">
-                    <i class='bx bx-equalizer icon' ></i>
+                    <i className='bx bx-equalizer icon' ></i>
                         <div className="logo_name">WYR</div>
                         <i className= {`bx ${slidebar ? "bx-menu-alt-right": "bx-menu" } `} id="btn" onClick = {this.menueToggle} ></i>
                     </div>
@@ -31,14 +31,14 @@ class Nav extends Component {
                         </li>
                         <li>
                         <a href="#">
-                            <i class='bx bx-message-add' ></i>
+                            <i className='bx bx-message-add' ></i>
                             <span className="links_name">New Question</span>
                         </a>
                         <span className="tooltip">New</span>
                         </li>
                         <li>
                         <a href="#">
-                            <i class='bx bx-group' ></i>
+                            <i className='bx bx-group' ></i>
                             <span className="links_name">Leader Boards</span>
                         </a>
                         <span className="tooltip">Boards</span>

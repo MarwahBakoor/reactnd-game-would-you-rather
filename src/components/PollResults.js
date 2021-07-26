@@ -19,8 +19,8 @@ class PollResults extends Component {
                         <div className="choice winner">
                             <h3> Would you rather be back-end deveolper </h3>
                             <div>
-                                <div class="progress">
-                                    <span class="progress-bar" style={{width:'50%'}} ></span>
+                                <div className="progress">
+                                    <span className="progress-bar" style={{width:'50%'}} ></span>
                                 </div>
                                 <div className="percentage"> 50% </div>
                             </div>
@@ -31,8 +31,8 @@ class PollResults extends Component {
                         <div className="choice">
                             <h3> Would you rather be front-end deveolper </h3>
                             <div>
-                                <div class="progress">
-                                    <span class="progress-bar" style={{width:'50%'}} ></span>
+                                <div className="progress">
+                                    <span className="progress-bar" style={{width:'50%'}} ></span>
                                 </div>
                                 <div className="percentage"> 50% </div> 
                             </div>
