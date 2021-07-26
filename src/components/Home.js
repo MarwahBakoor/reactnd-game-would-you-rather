@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PollReview from './PollReview'
+import PollResults from './PollResults'
 
 import '../Style/Home.css'
 
@@ -17,12 +18,15 @@ class Home extends Component {
                                     <a> Answered Questions </a>
                                 </li>
                             </ul>
-                        <div className="poll-reviwe-dashboard">
+                        <div className="poll-dashboard">
+                            {/* <PollReview />
                             <PollReview />
                             <PollReview />
                             <PollReview />
-                            <PollReview />
-                            <PollReview />
+                            <PollReview /> */}
+                            <PollResults />
+                            <PollResults />
+                            <PollResults />
                         </div>
 
                     </div>

@@ -1,0 +1,68 @@
+
+
+
+.choice {
+    margin: 1rem;
+    padding: 20px;
+    border-radius: 2%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+}
+
+.winner {
+    border:0.1em solid #F05454;
+    background-color: #ffe5e5;
+}
+
+.choices-container .choice h3 {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.progress {
+    width: 80%;
+    max-width: 260px;
+    height: 20px;
+    background: #e1e4e8;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress .progress-bar {
+    display: block;
+    height: 100%;
+    background: #F05454 ;
+    background-size: 300% 100%;
+  }
+
+.choice {
+    position: relative;
+}
+
+.choice div{
+    display: flex;
+}
+
+.choice .percentage {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    color: #F05454 ;
+}
+.user-vote{
+    position: absolute;
+    left: 90%;
+    top:-0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #F05454 ;
+    padding-top: 0.2rem;
+}
+
+.user-vote span {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #ffff;
+    text-align: center;
+}

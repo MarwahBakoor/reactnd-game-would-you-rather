@@ -45,7 +45,7 @@
 
   }
 
-  .poll-reviwe-dashboard{
+  .poll-dashboard{
       margin: 10rem 0;
       display: grid;
       grid-template-columns: auto auto auto;
@@ -53,12 +53,28 @@
   }
 
   @media only screen and (max-width: 600px) {
-    .poll-reviwe-dashboard {
+    .poll-dashboard {
       display: block;
       
     }
-    .poll-reviwe-dashboard > div{
+    .poll-dashboard > div{
       margin: 10rem 0 0 0;
     }
   }
 
+  .box .content{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 2rem;
+
+}
+
+.content .title{
+    font-size: 1rem;
+    color: #2C2A3F;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #dbdbdb;
+}
