@@ -66,3 +66,8 @@
     color: #ffff;
     text-align: center;
 }
+
+.votes{
+    font-size: 0.75rem;
+    font-weight: 300;
+}

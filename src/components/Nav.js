@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import '../Style/Nav.css'
-import Avatar from '../images/Avatar1.png'
 class Nav extends Component {
     state = {
         slidebar:false
@@ -11,6 +11,7 @@ class Nav extends Component {
         }))
     }
     render(){
+        const {name, avatarURL, job} =  this.props.user? this.props.user :''
         const slidebar = this.state.slidebar
         return (
 
@@ -45,10 +46,10 @@ class Nav extends Component {
                         </li>
                         <li className="profile">
                             <div className="profile-details">
-                            <img src={Avatar} alt="profileImg"  />
+                            <img src={avatarURL} alt="profileImg"  />
                             <div className="name_job">
-                                <div className="name">Prem Shahi</div>
-                                <div className="job">Web designer</div>
+                                <div className="authedUser_name">{name}</div>
+                                <div className="job">{job}</div>
                             </div>
                             </div>
                             <i className='bx bx-log-out' id="log_out" ></i>
@@ -61,4 +62,13 @@ class Nav extends Component {
     }
 }
 
-export default Nav;
+
+function mapStateToProps({authedUser, users}){
+
+    return {
+        user: users? users[authedUser] :{}
+    }
+
+}
+
+export default connect(mapStateToProps)(Nav);

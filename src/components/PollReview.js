@@ -22,7 +22,6 @@ class PollReview extends Component {
     render(){
         const selectedOption = this.state.chosenOption
         const {avatarURL, name, optionOne, optionTwo} = this.props.question
-        console.log(avatarURL)
         return(
             <div className='box poll-review'>
                 <div className='profile-img' >
