@@ -20,11 +20,6 @@ export function saveQuestion(question) {
     return _saveQuestion(question)
 }
 
-export function saveQuestionAnswer(authedUser, qid, answer){
-    const op = {
-        authedUser,
-        qid,
-        answer
-    }
-    return _saveQuestionAnswer(op)
+export function saveQuestionAnswer(info){
+    return _saveQuestionAnswer(info)
 }

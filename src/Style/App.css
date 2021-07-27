@@ -70,3 +70,11 @@ section .text{
     background-color:#F05454;
     
 }
+
+.btn:disabled,
+.btn[disabled]{
+  cursor: auto;
+  border: 1px solid #999999;
+  background-color: #EFEFEF ;
+  color: #666666;
+}

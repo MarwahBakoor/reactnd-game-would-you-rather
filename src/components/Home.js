@@ -7,12 +7,12 @@ import '../Style/Home.css'
 
 class Home extends Component {
     state = {
-        selected:'Unanswered'
+        selected:'Answered'
     }
 
-    handleToggle = (s) => {
+    handleToggle = (select) => {
         this.setState({
-            selected:s
+            selected:select
         })
     }
 
@@ -33,8 +33,8 @@ class Home extends Component {
                         <div className="poll-dashboard">
                             {
                                 selected === 'Unanswered'?
-                                this.props.answeredQuestions.map((id)=> <PollReview key={id} id={id}/> ):
-                                this.props.unansweredQuestions.map((id)=> <PollResults key={id} id={id}/>)
+                                this.props.unansweredQuestions.map((id)=> <PollReview handleToggle={this.handleToggle} key={id} id={id}/> ):
+                                this.props.answeredQuestions.map((id)=> <PollResults  handleToggle={this.handleToggle} key={id} id={id}/>)
                             }
 
                         </div>

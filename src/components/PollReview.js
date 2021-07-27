@@ -1,15 +1,23 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux'
+import {handleSaveAnswer} from '../actions/questions'
 import '../Style/PollReview.css'
 import { formatQuestion } from '../utils/helpers'
 class PollReview extends Component {
     state = {
-        selectedOption:''
+        chosenOption:''
     }
     handleClick=(option) => {
-        this.setState(()=>({
-            chosenOption:option
+        this.setState(()=>({chosenOption:option}))
+    }
+    handleSubmit = () => {
+            const {dispatch, id, authedUser } = this.props
+            dispatch(handleSaveAnswer({
+            authedUser, 
+            qid:id,
+            answer:this.state.chosenOption
         }))
+        
     }
     render(){
         const selectedOption = this.state.chosenOption
@@ -28,10 +36,10 @@ class PollReview extends Component {
                         Would You Rather?
                     </div>  
                     <ul className="Options">
-                        <li className={selectedOption === 'op1' ? 'selected' : '' } onClick={()=> this.handleClick('op1') }>
+                        <li className={selectedOption === 'optionOne' ? 'selected' : '' } onClick={()=> this.handleClick('optionOne') }>
                              {optionOne.text}
                         </li>
-                        <li className={selectedOption === 'op2' ? 'selected' : '' } onClick={()=> this.handleClick('op2') }>
+                        <li className={selectedOption === 'optionTwo' ? 'selected' : '' } onClick={()=> this.handleClick('optionTwo') }>
                             <span>
                             {optionTwo.text}
                             </span>
@@ -40,19 +48,20 @@ class PollReview extends Component {
                     </ul>
                 </div>
 
-                <a href="#" className="btn">Submit</a>
+                <button disabled={selectedOption=== ''} onClick={this.handleSubmit} className="btn">Submit</button>
                 
             </div>
         )
     }
 }
 
-function mapStateToProps({questions,authedUser,users},{id}){
+function mapStateToProps({questions,authedUser,users},{id, handleToggle}){
     const question = questions[id]
     const author = users[question.author]
     return {
         question: formatQuestion(question,author),
-        authedUser:authedUser
+        authedUser:authedUser,
+        handleToggle
     }
 
 
