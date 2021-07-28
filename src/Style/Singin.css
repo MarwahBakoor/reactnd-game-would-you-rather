@@ -1,0 +1,25 @@
+.singin-box{
+    min-height: 30rem;
+    width: 25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 2%;
+    border-bottom: 0.5rem solid #F05454;
+    text-align: center;
+}
+.site-logo i {
+    height: 100px;
+    line-height: 100px;
+    font-size: 100px;
+    border-radius: 12px;
+    color: #F05454 ;
+}
+
+.site-title h1 {
+    color: #11101D;
+}

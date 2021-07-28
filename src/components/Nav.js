@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import '../Style/Nav.css'
 class Nav extends Component {
     state = {
@@ -24,24 +25,24 @@ class Nav extends Component {
                     </div>
                     <ul className="nav-list">
                         <li>
-                            <a href="#">
-                            <i className='bx bx-grid-alt'></i>
-                            <span className="links_name">Home</span>
-                            </a>
+                            <NavLink to='/' exact >
+                                <i className='bx bx-grid-alt'></i>
+                                <span className="links_name">Home</span>
+                            </NavLink>
                             <span className="tooltip">Home</span>
                         </li>
                         <li>
-                        <a href="#">
-                            <i className='bx bx-message-add' ></i>
-                            <span className="links_name">New Question</span>
-                        </a>
+                            <NavLink to='/new-question' exact activeClassName='active' >
+                                <i className='bx bx-message-add' ></i>
+                                <span className="links_name">New Question</span>
+                            </NavLink>
                         <span className="tooltip">New</span>
                         </li>
                         <li>
-                        <a href="#">
-                            <i className='bx bx-group' ></i>
-                            <span className="links_name">Leader Boards</span>
-                        </a>
+                            <NavLink to='/leader-board' exact activeClassName='active' >
+                                <i className='bx bx-group' ></i>
+                                <span className="links_name">Leader Boards</span>
+                            </NavLink>
                         <span className="tooltip">Boards</span>
                         </li>
                         <li className="profile">
