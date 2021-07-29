@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Score from './Score'
 import '../Style/LeaderBoard.css'
-import { compare } from 'semver'
 class LeaderBoard extends Component {
     render(){
         const {usersArray} = this.props

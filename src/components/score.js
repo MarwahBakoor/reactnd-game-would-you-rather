@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Avatar from '../images/Avatar1.png'
 import '../Style/Score.css'
 
 

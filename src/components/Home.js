@@ -24,10 +24,10 @@ class Home extends Component {
                     <div className="home-pool-cards">
                             <ul className="cards-titles">
                                 <li className="title" onClick={()=> this.handleToggle('Unanswered')} >
-                                    <a className={selected === 'Unanswered' ? 'selected' : ''}> Unanswered Questions </a> 
+                                    <span className={selected === 'Unanswered' ? 'selected' : ''}> Unanswered Questions </span> 
                                 </li>
                                 <li className="title" onClick={()=> this.handleToggle('Answered')}>
-                                    <a className={selected === 'Answered' ? 'selected' : ''}> Answered Questions </a>
+                                    <span className={selected === 'Answered' ? 'selected' : ''}> Answered Questions </span>
                                 </li>
                             </ul>
                         <div className="poll-dashboard">
@@ -48,19 +48,28 @@ class Home extends Component {
 }
 
 function mapStateToProps({questions,authedUser}){
-    const answeredQuestions = []
-    const unansweredQuestions = []
+    let answeredQuestions = []
+    let unansweredQuestions = []
+    const a = []
+    const b = []
     for(const id in questions) {
         const votes= [...questions[id].optionOne.votes,...questions[id].optionTwo.votes]
         if(votes.includes(authedUser)){
-            answeredQuestions.push(questions[id].id)
+            answeredQuestions.push(questions[id])
+            a.push(questions[id])
         }else {
-            unansweredQuestions.push(questions[id].id)
+            unansweredQuestions.push(questions[id])
+            b.push(questions[id])
         }
     }
+    answeredQuestions = answeredQuestions.sort((a,b) => b.timestamp -  a.timestamp )
+    unansweredQuestions = unansweredQuestions.sort((a,b) => b.timestamp -  a.timestamp )
+    console.log( answeredQuestions)
+
+    
     return {
-        answeredQuestions: answeredQuestions,
-        unansweredQuestions:unansweredQuestions
+        answeredQuestions: answeredQuestions.map((q)=>q.id),
+        unansweredQuestions:unansweredQuestions.map((q)=>q.id)
     }
   }
 

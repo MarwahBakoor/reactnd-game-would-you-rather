@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { setAuthedUser } from '../actions/authedUser'  
+import { setAuthedUser } from '../actions/authedUser'
 import '../Style/Nav.css'
 class Nav extends Component {
     handleLogOut = () =>{
@@ -16,7 +16,7 @@ class Nav extends Component {
                     <div className="logo-details">
                     <i className='bx bx-equalizer icon' ></i>
                         <div className="logo_name">WYR</div>
-                        <i className= 'bx bx-menu-alt-right '  ></i>
+                        <i className= 'bx bx-menu-alt-right logo'></i>
                     </div>
                     <ul className="nav-list">
                         <li>

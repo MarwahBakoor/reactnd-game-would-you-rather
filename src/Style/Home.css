@@ -16,7 +16,7 @@
   }
   
   /* Underline styles */
- .cards-titles .title a {
+ .cards-titles .title span {
     display: block;
     position: relative;
     padding: 0.2em 0;
@@ -24,7 +24,7 @@
   }
   
   /* Fade in */
-  .cards-titles .title a::after {
+  .cards-titles .title span::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -36,8 +36,8 @@
     transition: opacity 300ms, transform 300ms;
   }
   
-  .cards-titles .title a:hover::after,
- .cards-titles .title a:focus::after {
+  .cards-titles .title span:hover::after,
+ .cards-titles .title span:focus::after {
     opacity: 1;
     transform: translate3d(0, 0.2em, 0);
   }

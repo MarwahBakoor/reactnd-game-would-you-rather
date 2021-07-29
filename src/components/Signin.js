@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'  
+import { withRouter } from 'react-router-dom'
+
 import '../Style/Signin.css'
 class Signin extends Component {
     state = {
@@ -11,7 +13,9 @@ class Signin extends Component {
       }
     handleSubmit = (event) => {
         event.preventDefault();
+        this.props.history.push(`/`) 
         this.props.dispatch(setAuthedUser(this.state.selectedUser))
+
     }
     render(){
         return(
@@ -55,4 +59,4 @@ function mapStateToProps({users, authedUser}){
 
 }
 
-export default connect(mapStateToProps)(Signin);
+export default withRouter(connect(mapStateToProps)(Signin));

@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {handleSaveAnswer} from '../actions/questions'
 import '../Style/PollReview.css'
 import { formatQuestion } from '../utils/helpers'
-import {Redirect,withRouter} from 'react-router-dom'
+import {Redirect, withRouter} from 'react-router-dom'
 
 class PollReview extends Component {
     state = {
@@ -20,7 +20,7 @@ class PollReview extends Component {
             qid:id,
             answer:this.state.chosenOption
         }))
-        this.props.history.push(`/poll-results-page/${id}`)        
+        this.props.history.push(`/poll-results/${id}`)        
     }
     render(){
         const selectedOption = this.state.chosenOption
