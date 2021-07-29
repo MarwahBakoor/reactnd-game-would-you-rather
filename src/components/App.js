@@ -6,21 +6,21 @@ import Nav from './Nav'
 import Home from './Home'
 import NewQuestion from "./NewQuestion"
 import LeaderBoard  from "./LeaderBoard"
-import Singin from './Singin'
+import Signin from './Signin'
 
 import '../Style/App.css'
 
 class App extends Component {
   state = {
-    singin:false
+    signin:false
   }
   componentDidMount(){
     this.props.dispatch(handleInitialData())
   }
 
   render(){
-    if(!this.state.singin){
-      return <Singin />
+    if(!this.state.signin){
+      return <Signin />
     } else {
     return (
       <Router>
