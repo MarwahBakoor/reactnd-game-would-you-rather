@@ -7,7 +7,7 @@ class Score extends Component {
     render(){
         const {name, answersNumber, questionNumber, score, avatarURL} = this.props.info
         return(
-            <div className='box'>
+            <div className='box' id='score-box'>
                 <div className='profile-img' >
                      <img src={avatarURL} alt="profileImg"  />
                 </div>

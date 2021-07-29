@@ -3,9 +3,12 @@ import {connect} from 'react-redux'
 import {handleSaveAnswer} from '../actions/questions'
 import '../Style/PollReview.css'
 import { formatQuestion } from '../utils/helpers'
+import {Redirect,withRouter} from 'react-router-dom'
+
 class PollReview extends Component {
     state = {
-        chosenOption:''
+        chosenOption:'',
+        toResult:false
     }
     handleClick=(option) => {
         this.setState(()=>({chosenOption:option}))
@@ -17,11 +20,14 @@ class PollReview extends Component {
             qid:id,
             answer:this.state.chosenOption
         }))
-        
+        this.props.history.push(`/poll-results-page/${id}`)        
     }
     render(){
         const selectedOption = this.state.chosenOption
-        const {avatarURL, name, optionOne, optionTwo} = this.props.question
+        const {avatarURL, name, id, optionOne, optionTwo} = this.props.question
+        if(this.state.toResult){
+            <Redirect to={`/poll-results-page/${id}`} />
+        }
         return(
             <div className='box poll-review'>
                 <div className='profile-img' >
@@ -54,16 +60,15 @@ class PollReview extends Component {
     }
 }
 
-function mapStateToProps({questions,authedUser,users},{id, handleToggle}){
+function mapStateToProps({questions,authedUser,users},{id}){
     const question = questions[id]
     const author = users[question.author]
     return {
         question: formatQuestion(question,author),
         authedUser:authedUser,
-        handleToggle
     }
 
 
 }
 
-export default connect(mapStateToProps)(PollReview)
+export default withRouter(connect(mapStateToProps)(PollReview))

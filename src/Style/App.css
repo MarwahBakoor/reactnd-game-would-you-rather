@@ -13,15 +13,24 @@ section .text{
     margin: 18px
   }
 
+
+
   section{
     position: relative;
     background: #efefef;
     min-height: 100vh;
     top: 0;
-    left: 78px;
-    width: calc(100% - 78px);
+    left: 250px;
+    width: calc(100% - 250px);
     transition: all 0.5s ease;
     z-index: 2;
+  }
+  @media only screen and (max-width: 1255px) {
+    section{
+      left: 75px;
+      width: calc(100% - 75px);
+    }
+    
   }
   .box{
     min-height: 20rem;
@@ -30,8 +39,8 @@ section .text{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    margin: 0 3rem;
-
+    margin: auto;
+    margin-top: 5rem;
 }
 .box img{
   width: 95%; 

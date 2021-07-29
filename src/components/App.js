@@ -7,6 +7,7 @@ import Home from './Home'
 import NewQuestion from "./NewQuestion"
 import LeaderBoard  from "./LeaderBoard"
 import Signin from './Signin'
+import PollResultsPage from './PollResultsPage'
 
 import '../Style/App.css'
 
@@ -21,7 +22,7 @@ class App extends Component {
   render(){
     if(this.props.signin){
       return <Signin />
-    } else {
+    } 
     return (
       <Router>
         <div className="App">
@@ -29,11 +30,11 @@ class App extends Component {
           <Route path = '/' exact component={Home}/>
           <Route path = '/new-question' component = {NewQuestion} />
           <Route path='/leader-board' component = {LeaderBoard} />
+          <Route path = '/poll-results-page/:id' component = {PollResultsPage} />
         </div>
       </Router>
-    );
+    )
 
-  }
 }
   
 }

@@ -37,3 +37,7 @@
     font-size: 1.5rem;
     color: white;
 }
+
+#score-box {
+    width: 20rem;
+}

@@ -7,7 +7,6 @@ class PollResults extends Component {
     render(){
         const {avatarURL, name, optionOne, optionTwo} = this.props.question
         const {answer, op1pPer, op2pPer, votesNumber} = this.props
-        const winner = op1pPer > op2pPer 
         return(
             <div className='box'>
                 <div className='profile-img' >
@@ -19,7 +18,7 @@ class PollResults extends Component {
                     </div>
                     <div className="choices-container" >
 
-                        <div className={`choice ${winner ? 'winner' : ''}`}>
+                        <div className={`choice ${op1pPer > op2pPer  ? 'winner' : ''}`}>
                             <h3> Would you rather be {optionOne.text} </h3>
                             <div>
                                 <div className="progress">
@@ -36,7 +35,7 @@ class PollResults extends Component {
                             }
                             
                         </div>
-                        <div className={`choice ${winner ? '' : 'winner'}`}>
+                        <div className={`choice ${op1pPer < op2pPer  ?'winner': '' }`}>
                             <h3> Would you rather be {optionTwo.text} </h3>
                             <div>
                                 <div className="progress">
@@ -64,7 +63,12 @@ class PollResults extends Component {
 function mapStateToProps({questions,authedUser,users},{id}){
     const question = questions[id]
     const author = users[question.author]
-    const answer = question.optionOne.votes.includes(authedUser) ? 'optionOne' :'optionTwo'
+    let answer
+    if(question.optionOne.votes.includes(authedUser)){
+        answer ='optionOne'
+    }else if(question.optionTwo.votes.includes(authedUser)) {
+        answer ='optionTwo'
+    }
     //  calculate percentage
     const op1 = question.optionOne.votes.length
     const op2 =question.optionTwo.votes.length

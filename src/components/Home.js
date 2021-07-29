@@ -33,8 +33,8 @@ class Home extends Component {
                         <div className="poll-dashboard">
                             {
                                 selected === 'Unanswered'?
-                                this.props.unansweredQuestions.map((id)=> <PollReview handleToggle={this.handleToggle} key={id} id={id}/> ):
-                                this.props.answeredQuestions.map((id)=> <PollResults  handleToggle={this.handleToggle} key={id} id={id}/>)
+                                this.props.unansweredQuestions.map((id)=> <PollReview key={id} id={id}/> ):
+                                this.props.answeredQuestions.map((id)=> <PollResults key={id} id={id}/>)
                             }
 
                         </div>

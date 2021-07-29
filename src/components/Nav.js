@@ -4,28 +4,19 @@ import { NavLink } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'  
 import '../Style/Nav.css'
 class Nav extends Component {
-    state = {
-        slidebar:false
-    }
-    menueToggle = () =>{
-        this.setState((prevstat)=> ({
-            slidebar:!prevstat.slidebar
-        }))
-    }
     handleLogOut = () =>{
         this.props.dispatch(setAuthedUser(null))
     }
     render(){
         const {name, avatarURL, job} =  this.props.user? this.props.user :''
-        const slidebar = this.state.slidebar
         return (
 
             <div className = 'NavBar'>   
-                <div className={`sidebar ${slidebar ? 'open' : ''}`}>
+                <div className={'sidebar open'}>
                     <div className="logo-details">
                     <i className='bx bx-equalizer icon' ></i>
                         <div className="logo_name">WYR</div>
-                        <i className= {`bx ${slidebar ? "bx-menu-alt-right": "bx-menu" } `} id="btn" onClick = {this.menueToggle} ></i>
+                        <i className= 'bx bx-menu-alt-right '  ></i>
                     </div>
                     <ul className="nav-list">
                         <li>

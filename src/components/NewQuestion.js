@@ -2,11 +2,13 @@ import React, {Component} from 'react'
 import {connect}  from 'react-redux'
 import {handleAddQuestion} from '../actions/questions'
 import '../Style/NewQuestion.css'
+import {Redirect} from 'react-router-dom'
 
 class NewQuestion extends Component {
     state = {
       optionOne:'',
-      optionTwo:''
+      optionTwo:'',
+      toHome:false
     }
 
     handleChange = (option,event) =>{
@@ -26,8 +28,13 @@ class NewQuestion extends Component {
             optionTwo:''
         }))
 
+        this.setState(()=>({toHome:true}))
+
     }
     render() {
+        if(this.state.toHome){
+            return <Redirect to='/' /> 
+        }
         return(
             <section className="section">
                 <div className="text">Create New Question</div>
@@ -45,6 +52,7 @@ class NewQuestion extends Component {
                 
             </section>
         )
+
     }
 }
 
