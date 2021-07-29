@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { setAuthedUser } from '../actions/authedUser'  
 import '../Style/Nav.css'
 class Nav extends Component {
     state = {
@@ -10,6 +11,9 @@ class Nav extends Component {
         this.setState((prevstat)=> ({
             slidebar:!prevstat.slidebar
         }))
+    }
+    handleLogOut = () =>{
+        this.props.dispatch(setAuthedUser(null))
     }
     render(){
         const {name, avatarURL, job} =  this.props.user? this.props.user :''
@@ -53,8 +57,11 @@ class Nav extends Component {
                                 <div className="job">{job}</div>
                             </div>
                             </div>
-                            <i className='bx bx-log-out' id="log_out" ></i>
-                        </li>
+                            <div onClick={this.handleLogOut}>
+                                <i  className='bx bx-log-out' id="log_out" ></i>
+                            </div>
+                            </li>
+                            
                     </ul>
                 </div>
             </div> 

@@ -47,7 +47,7 @@ class PollReview extends Component {
                     </ul>
                 </div>
 
-                <button disabled={selectedOption=== ''} onClick={this.handleSubmit} className="btn">Submit</button>
+                <button disabled={selectedOption=== ''} onClick={this.handleSubmit} id='vote-button' className="btn">Submit</button>
                 
             </div>
         )

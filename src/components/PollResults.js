@@ -79,7 +79,7 @@ function mapStateToProps({questions,authedUser,users},{id}){
         op1pPer,
         op2pPer,
         votesNumber
-        
+ 
     }
 
 }

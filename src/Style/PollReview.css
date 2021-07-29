@@ -27,3 +27,7 @@
     transition: all 0.2s;
 }
 
+
+#vote-button{
+    margin-bottom: 2rem;
+}

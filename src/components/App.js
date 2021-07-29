@@ -15,11 +15,11 @@ class App extends Component {
     signin:false
   }
   componentDidMount(){
-    this.props.dispatch(handleInitialData())
+    this.props.dispatch(handleInitialData());
   }
 
   render(){
-    if(!this.state.signin){
+    if(this.props.signin){
       return <Signin />
     } else {
     return (
@@ -38,4 +38,11 @@ class App extends Component {
   
 }
 
-export default connect()(App);
+function mapStateToProps({authedUser}){
+  return {
+    signin: authedUser === null,
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(App);
