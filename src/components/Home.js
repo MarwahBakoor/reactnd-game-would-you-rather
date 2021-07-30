@@ -64,8 +64,6 @@ function mapStateToProps({questions,authedUser}){
     }
     answeredQuestions = answeredQuestions.sort((a,b) => b.timestamp -  a.timestamp )
     unansweredQuestions = unansweredQuestions.sort((a,b) => b.timestamp -  a.timestamp )
-    console.log( answeredQuestions)
-
     
     return {
         answeredQuestions: answeredQuestions.map((q)=>q.id),

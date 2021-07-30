@@ -30,7 +30,6 @@ function addQuestion(question){
 export function handleAddQuestion(info){
     return (dispatch,getState) => {
         const {authedUser} = getState()
-        console.log(info)
         return saveQuestion ({
             ...info,
             author:authedUser

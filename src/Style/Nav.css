@@ -208,11 +208,6 @@ li .active {
     width: 50px;
     background: none;
   }
-  
-  .sidebar.open ~ .home-section{
-    left: 250px;
-    width: calc(100% - 250px);
-  }
   .sidebar.open li.profile{
     width: 250px;
   }
@@ -220,9 +215,23 @@ li .active {
     opacity: 1;
     pointer-events: auto;
   }
+  .small-screen-profile{
+     display: none;
+  }
   
 }
 
 .logo{
   margin-left: 5rem;
+}
+
+.small-screen-profile{
+  position: absolute;
+  top: 38%;
+}
+
+.small-screen-profile .authedUser_name{
+  color: #efefef;
+  font-size: 0.8rem;
+  text-align: center;
 }

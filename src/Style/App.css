@@ -13,8 +13,6 @@ section .text{
     margin: 18px
   }
 
-
-
   section{
     position: relative;
     background: #efefef;
@@ -33,7 +31,7 @@ section .text{
     
   }
   .box{
-    min-height: 20rem;
+    min-height: 22rem;
     width: 22rem;
     border-radius: 5%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -73,6 +71,7 @@ section .text{
     color:#F05454;
     text-align:center;
     transition: all 0.2s;
+    margin-bottom: 3rem;
 }
 .btn:hover {
     color:#EFEFEF;

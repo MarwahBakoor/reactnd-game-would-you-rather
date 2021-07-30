@@ -10,7 +10,7 @@ import Pages from './Pages'
 
 class App extends Component {
   componentDidMount(){
-    this.props.dispatch(handleInitialData());
+    this.props.handleInitialData();
   }
 
   render(){
@@ -23,10 +23,10 @@ class App extends Component {
           <Switch> 
             <Route path='/signin'  component={Signin} />
             <PrivateRoute path = '/' exact singin={this.props.signin}> <Pages /> </PrivateRoute>
-            <PrivateRoute path = '/new-question' exact singin={this.props.signin}> <Pages /> </PrivateRoute>
-            <PrivateRoute path = '/leader-board' exact singin={this.props.signin}> <Pages /> </PrivateRoute>
-            <PrivateRoute path = '/poll-results/:id' exact singin={this.props.signin}> <Pages /> </PrivateRoute>
-            <Route component={NotFound} />
+            <PrivateRoute path = '/add' exact singin={this.props.signin}> <Pages /> </PrivateRoute>
+            <PrivateRoute path = '/leaderboard' exact singin={this.props.signin}> <Pages /> </PrivateRoute>
+            <PrivateRoute path = '/questions/:id' exact singin={this.props.signin}> <Pages /> </PrivateRoute>
+            <PrivateRoute  path = '*' exact singin={this.props.signin}><NotFound /></PrivateRoute>
 
           </Switch> 
         </div>
@@ -43,4 +43,4 @@ function mapStateToProps({authedUser}){
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps,{ handleInitialData })(App);

@@ -1,6 +1,12 @@
 
+.poll-result-links{
+    text-decoration: none;
+    color: #000;
+}
 
-
+.poll-result-links:visited {
+    color:#0000
+}
 .choice {
     margin: 1rem;
     padding: 20px;
@@ -48,6 +54,10 @@
     font-size: 0.8rem;
     margin-left: 0.5rem;
     color: #F05454 ;
+}
+.choice span {
+    font-size: 0.8rem;
+    color: rgb(46, 46, 46);
 }
 .user-vote{
     position: absolute;

@@ -2,12 +2,16 @@ import React,{Component} from 'react'
 import { connect } from 'react-redux'
 import '../Style/PollResults.css'
 import { formatQuestion } from '../utils/helpers'
+import {NavLink} from 'react-router-dom'
 class PollResults extends Component {
 
     render(){
-        const {avatarURL, name, optionOne, optionTwo} = this.props.question
-        const {answer, op1pPer, op2pPer, votesNumber} = this.props
+        const {avatarURL, name, optionOne, optionTwo,id} = this.props.question
+        const {answer, op1, op2, votesNumber} = this.props
+        const op1pPer = Math.round(op1/(op1+op2) * 100)
+        const op2pPer = Math.round(op2/(op1+op2) * 100)
         return(
+            <NavLink to={`/questions/${id}`} exact className='poll-result-links' >
             <div className='box'>
                 <div className='profile-img' >
                      <img src={avatarURL} alt="profileImg"  />
@@ -26,6 +30,7 @@ class PollResults extends Component {
                                 </div>
                                 <div className="percentage"> {op1pPer}% </div>
                             </div>
+                            
                             {
                                 answer === 'optionOne' ?
                                 <div className="user-vote">
@@ -33,6 +38,7 @@ class PollResults extends Component {
                                 </div> 
                                 : ''
                             }
+                            <span>{op1} out of {votesNumber} votes</span>
                             
                         </div>
                         <div className={`choice ${op1pPer < op2pPer  ?'winner': '' }`}>
@@ -50,12 +56,14 @@ class PollResults extends Component {
                                 </div> 
                                 : ''
                             }
+                            <span>{op2} out of {votesNumber} votes</span>
                         </div>
                         <span className="votes"> Votes Number: {votesNumber} </span>
                     </div>
                 </div>
                 
             </div>
+            </NavLink>
         )
     }
 }
@@ -73,15 +81,12 @@ function mapStateToProps({questions,authedUser,users},{id}){
     const op1 = question.optionOne.votes.length
     const op2 =question.optionTwo.votes.length
     const votesNumber = op1 + op2
-    const op1pPer = Math.round(op1/(op1+op2) * 100)
-    const op2pPer = Math.round(op2/(op1+op2) * 100)
-
     return {
         question: formatQuestion(question,author),
         authedUser,
         answer,
-        op1pPer,
-        op2pPer,
+        op1,
+        op2,
         votesNumber
  
     }

@@ -27,18 +27,23 @@ class Nav extends Component {
                             <span className="tooltip">Home</span>
                         </li>
                         <li>
-                            <NavLink to='/new-question' exact activeClassName='active' >
+                            <NavLink to='/add' exact activeClassName='active' >
                                 <i className='bx bx-message-add' ></i>
                                 <span className="links_name">New Question</span>
                             </NavLink>
                         <span className="tooltip">New</span>
                         </li>
                         <li>
-                            <NavLink to='/leader-board' exact activeClassName='active' >
+                            <NavLink to='/leaderboard' exact activeClassName='active' >
                                 <i className='bx bx-group' ></i>
                                 <span className="links_name">Leader Boards</span>
                             </NavLink>
                         <span className="tooltip">Boards</span>
+                        </li>
+                        <li className="small-screen-profile">                     
+                            <div className="authedUser_name">{name}</div>
+                            <img src={avatarURL} alt="profileImg"  />       
+
                         </li>
                         <li className="profile">
                             <div className="profile-details">
@@ -51,8 +56,7 @@ class Nav extends Component {
                             <div onClick={this.handleLogOut}>
                                 <i  className='bx bx-log-out' id="log_out" ></i>
                             </div>
-                            </li>
-                            
+                            </li>         
                     </ul>
                 </div>
             </div> 

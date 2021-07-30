@@ -2,11 +2,15 @@ import React from 'react-dom'
 import { Route, Redirect } from 'react-router-dom'
 import {connect} from 'react-redux'
 
-function PrivateRoute({ children,singin, ...rest }) {
+function PrivateRoute({ children,singin,...rest }) {
+  const path = rest.path
     return (
       <Route {...rest} render={() => {
         return singin
-          ? <Redirect to='/signin' />
+          ? <Redirect  to={{
+            pathname: '/signin',
+            state: {path }
+          }} />
           :children 
       }} />
     )

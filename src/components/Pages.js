@@ -4,7 +4,7 @@ import Nav from './Nav'
 import Home from './Home'
 import NewQuestion from "./NewQuestion"
 import LeaderBoard  from "./LeaderBoard"
-import PollResultsPage from "./PollResultsPage";
+import PollPage from "./PollPage";
 
 class Pages extends Component {
     render() {
@@ -12,13 +12,14 @@ class Pages extends Component {
             <div>
                 <Nav />
                 <Route path = '/' exact singin={this.props.signin} component={Home} />
-                <Route path = '/new-question' singin={this.props.signin} component={NewQuestion}/>
-                <Route path = '/leader-board' singin={this.props.signin} component={LeaderBoard}/>
-                <Route path = '/poll-results/:id' singin={this.props.signin} component={PollResultsPage}/>
+                <Route path = '/add' singin={this.props.signin} component={NewQuestion}/>
+                <Route path = '/leaderboard' singin={this.props.signin} component={LeaderBoard}/>
+                <Route path = '/questions/:id' singin={this.props.signin} component={PollPage}/>
             </div>
         )
     }
 }
+
 
 
 export default Pages 

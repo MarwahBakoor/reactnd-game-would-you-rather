@@ -12,8 +12,9 @@ class Signin extends Component {
         this.setState({selectedUser: event.target.value});
       }
     handleSubmit = (event) => {
+        const path = this.props.location.state.path
         event.preventDefault();
-        this.props.history.push(`/`) 
+        this.props.history.push(path) 
         this.props.dispatch(setAuthedUser(this.state.selectedUser))
 
     }
@@ -40,7 +41,7 @@ class Signin extends Component {
                             </select>
                         </div>
 
-                        <button id='signin-btn' className='btn'> Sign in </button>
+                        <button disabled={this.state.selectedUser === ''} id='signin-btn' className='btn'> Sign in </button>
                         
                     </form>
 

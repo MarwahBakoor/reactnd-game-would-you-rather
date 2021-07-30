@@ -12,10 +12,10 @@ class Score extends Component {
                 </div>
                 <h1 className="name">{name}</h1>
                 <div className="score-details-container">
-                    <div class="score-details">
+                    <div className="score-details">
                         Answered Questions: <span> {answersNumber} </span>
                     </div>
-                    <div class="score-details">
+                    <div className="score-details">
                         Created Questions: <span> {questionNumber} </span>
                     </div>
                 </div>  
