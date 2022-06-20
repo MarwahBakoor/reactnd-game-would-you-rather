@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/MarwahBakoor/reactnd-game-would-you-rather/static/css/main.c412f1f5.chunk.css",
+    "main.js": "/MarwahBakoor/reactnd-game-would-you-rather/static/js/main.3d962d38.chunk.js",
+    "main.js.map": "/MarwahBakoor/reactnd-game-would-you-rather/static/js/main.3d962d38.chunk.js.map",
+    "runtime-main.js": "/MarwahBakoor/reactnd-game-would-you-rather/static/js/runtime-main.457e9dce.js",
+    "runtime-main.js.map": "/MarwahBakoor/reactnd-game-would-you-rather/static/js/runtime-main.457e9dce.js.map",
+    "static/js/2.e9ff99db.chunk.js": "/MarwahBakoor/reactnd-game-would-you-rather/static/js/2.e9ff99db.chunk.js",
+    "static/js/2.e9ff99db.chunk.js.map": "/MarwahBakoor/reactnd-game-would-you-rather/static/js/2.e9ff99db.chunk.js.map",
+    "index.html": "/MarwahBakoor/reactnd-game-would-you-rather/index.html",
+    "static/css/main.c412f1f5.chunk.css.map": "/MarwahBakoor/reactnd-game-would-you-rather/static/css/main.c412f1f5.chunk.css.map",
+    "static/js/2.e9ff99db.chunk.js.LICENSE.txt": "/MarwahBakoor/reactnd-game-would-you-rather/static/js/2.e9ff99db.chunk.js.LICENSE.txt",
+    "static/media/Avatar1.f243453f.png": "/MarwahBakoor/reactnd-game-would-you-rather/static/media/Avatar1.f243453f.png",
+    "static/media/Avatar2.cc0e1c8f.png": "/MarwahBakoor/reactnd-game-would-you-rather/static/media/Avatar2.cc0e1c8f.png",
+    "static/media/Avatar3.33c98990.png": "/MarwahBakoor/reactnd-game-would-you-rather/static/media/Avatar3.33c98990.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.457e9dce.js",
+    "static/js/2.e9ff99db.chunk.js",
+    "static/css/main.c412f1f5.chunk.css",
+    "static/js/main.3d962d38.chunk.js"
+  ]
+}
